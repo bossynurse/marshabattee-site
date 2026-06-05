@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marsha Battee, RN — Clinical Advisor & Consultant</title>
+<meta name="description" content="Marsha Battee is a registered nurse and clinical advisor who helps teams build healthcare products that hold up in the real world." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #F4EEE3;
+    --paper-2: #EFE7D8;
+    --ink: #1B1A16;
+    --muted: #6E6658;
+    --accent: #0E5F52;
+    --accent-deep: #0A463C;
+    --clay: #BF5638;
+    --line: rgba(27, 26, 22, 0.14);
+    --display: "Fraunces", Georgia, serif;
+    --body: "Schibsted Grotesk", system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* subtle grain texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+
+  a { color: inherit; }
+
+  /* ---------- Top bar ---------- */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(8px);
+    background: rgba(244, 238, 227, 0.82);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; max-width: 1080px; margin: 0 auto; }
+  .mark { font-family: var(--display); font-weight: 600; font-size: 21px; letter-spacing: -0.01em; }
+  .mark span { color: var(--accent); font-style: italic; }
+  .btn {
+    display: inline-block; font-family: var(--body); font-weight: 500; font-size: 15px;
+    padding: 11px 20px; border-radius: 100px; text-decoration: none;
+    background: var(--ink); color: var(--paper);
+    transition: transform .25s ease, background .25s ease;
+  }
+  .btn:hover { background: var(--accent); transform: translateY(-2px); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 110px 0 90px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--clay); font-weight: 600; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: var(--display); font-weight: 500;
+    font-size: clamp(40px, 6.4vw, 78px); line-height: 1.04; letter-spacing: -0.02em;
+    max-width: 16ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lede {
+    font-size: clamp(18px, 2.1vw, 22px); color: var(--muted); max-width: 52ch;
+    margin-top: 32px; line-height: 1.55;
+  }
+  .hero .cta-row { margin-top: 40px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-lg { padding: 15px 30px; font-size: 16px; }
+  .link-arrow {
+    font-weight: 500; text-decoration: none; border-bottom: 1.5px solid var(--line);
+    padding-bottom: 3px; transition: border-color .25s ease;
+  }
+  .link-arrow:hover { border-color: var(--accent); }
+
+  /* ---------- Rule / section heads ---------- */
+  .section { padding: 70px 0; border-top: 1px solid var(--line); }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 22px;
+  }
+  .section h2 {
+    font-family: var(--display); font-weight: 500; font-size: clamp(28px, 3.6vw, 40px);
+    line-height: 1.12; letter-spacing: -0.015em; max-width: 22ch;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; }
+  .about p { font-size: 19px; color: #34322b; margin-bottom: 20px; }
+  .about p:last-child { margin-bottom: 0; }
+  .stat-list { list-style: none; }
+  .stat-list li { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .stat-list li:first-child { padding-top: 0; }
+  .stat-list .n { font-family: var(--display); font-size: 30px; color: var(--accent); display: block; line-height: 1; }
+  .stat-list .l { font-size: 15px; color: var(--muted); margin-top: 8px; }
+
+  /* ---------- Offerings ---------- */
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 44px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .card { background: var(--paper); padding: 34px 30px; transition: background .3s ease; }
+  .card:hover { background: var(--paper-2); }
+  .card .num { font-family: var(--display); font-size: 15px; color: var(--clay); font-style: italic; }
+  .card h3 { font-family: var(--display); font-weight: 500; font-size: 23px; margin: 12px 0 12px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); font-size: 16.5px; }
+
+  /* ---------- CTA footer ---------- */
+  .closer { padding: 90px 0 70px; border-top: 1px solid var(--line); text-align: center; }
+  .closer h2 { font-family: var(--display); font-weight: 500; font-size: clamp(32px, 5vw, 56px); letter-spacing: -0.02em; line-height: 1.08; max-width: 18ch; margin: 0 auto; }
+  .closer h2 em { font-style: italic; color: var(--accent); }
+  .closer p { color: var(--muted); max-width: 46ch; margin: 24px auto 38px; font-size: 18px; }
+  .email-link { font-family: var(--display); font-size: clamp(20px, 3vw, 28px); color: var(--accent); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color .25s ease; }
+  .email-link:hover { border-color: var(--accent); }
+
+  footer.foot { padding: 30px 0 50px; text-align: center; color: var(--muted); font-size: 14px; }
+
+  /* ---------- Entrance animation ---------- */
+  .reveal { opacity: 0; transform: translateY(16px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; }
+  .d3 { animation-delay: .25s; } .d4 { animation-delay: .35s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .cards { grid-template-columns: 1fr; }
+    .nav { padding: 16px 22px; }
+    .wrap { padding: 0 22px; }
+    .hero { padding: 70px 0 60px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="mark">Marsha <span>Battee</span>, RN</div>
+      <a class="btn" href="#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow reveal d1">Registered Nurse · Clinical Advisor</p>
+        <h1 class="reveal d2">Clinical judgment that makes your product <em>safer, sharper, and easier to actually use.</em></h1>
+        <p class="lede reveal d3">I'm Marsha, a registered nurse and consultant with 15 years at the bedside and in nursing leadership. I work with teams on regulatory, compliance, implementations, and building workflow, to bring clinical reality into the room early, before it turns into a costly redesign.</p>
+        <div class="cta-row reveal d4">
+          <a class="btn btn-lg" href="#contact">Work with me</a>
+          <a class="link-arrow" href="#about">More about me ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap">
+        <div class="about-grid">
+          <div>
+            <p class="kicker">Who I am</p>
+            <h2>Fifteen years of watching good ideas meet messy clinical reality.</h2>
+            <ul class="stat-list" style="margin-top:36px;">
+              <li><span class="n">15 yrs</span><span class="l">Critical care and ED, ambulatory, nursing education and leadership</span></li>
+              <li><span class="n">Health systems</span><span class="l">Advising on regulatory compliance and clinical workflow rollout</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>I've spent my career where care actually happens: the ER, critical care, ambulatory clinics, and the leadership rooms where the rules get set. That's a vantage point most product teams never get close to.</p>
+            <p>I've advised large health systems on regulatory compliance and the workflow changes that come with putting new tools in front of clinicians.</p>
+            <p>Nurses are the people who decide whether your product gets used or quietly ignored. I help you design for that reality from the start.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <p class="kicker">How I help</p>
+        <h2>A clinical set of eyes on the decisions that matter.</h2>
+        <div class="cards">
+          <div class="card">
+            <span class="num">01</span>
+            <h3>Clinical advisory</h3>
+            <p>Pressure-test product and design decisions against how care actually happens, not how the demo looks.</p>
+          </div>
+          <div class="card">
+            <span class="num">02</span>
+            <h3>Workflow and adoption</h3>
+            <p>Find the friction that keeps clinicians from using your product, and fix it before launch instead of after.</p>
+          </div>
+          <div class="card">
+            <span class="num">03</span>
+            <h3>Regulatory and compliance</h3>
+            <p>Get clear on the rules your product has to live inside, in plain language your team can act on.</p>
+          </div>
+          <div class="card">
+            <span class="num">04</span>
+            <h3>Voice of the nurse</h3>
+            <p>Bring frontline clinical perspective into design, messaging, and how you take the product to market.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closer" id="contact">
+      <div class="wrap">
+        <h2>Tell me what you're building and where a <em>clinical perspective</em> would help.</h2>
+        <p>The fastest way to reach me is email. Tell me a little about your product and what you're trying to figure out, and we'll set up a call.</p>
+        <a class="email-link" href="mailto:marsha@marshabattee.com">marsha@marshabattee.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">© <span id="yr"></span> Marsha Battee, RN</div>
+  </footer>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
